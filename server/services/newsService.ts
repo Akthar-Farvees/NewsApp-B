@@ -1,7 +1,7 @@
 import { storage } from "../storage";
 import { aiService } from "./aiService";
 import { rssService } from "./rssService";
-import { InsertTrendingRecord } from "../../shared/schema";
+import { InsertTrendingRecord } from "../shared/schema";
 
 export class NewsService {
   async processNewArticles(): Promise<void> {
@@ -70,10 +70,11 @@ export class NewsService {
         const keywords = this.extractKeywords(text);
         
         // Initialize category map if needed
-        if (!categoryTopics.has(article.category)) {
-          categoryTopics.set(article.category, new Map());
+        const categoryKey = article.category ?? '';
+        if (!categoryTopics.has(categoryKey)) {
+          categoryTopics.set(categoryKey, new Map());
         }
-        const categoryMap = categoryTopics.get(article.category)!;
+        const categoryMap = categoryTopics.get(categoryKey)!;
 
         for (const keyword of keywords) {
           keywordCounts.set(keyword, (keywordCounts.get(keyword) || 0) + 1);

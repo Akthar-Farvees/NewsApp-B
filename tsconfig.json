@@ -12,6 +12,6 @@
     "resolveJsonModule": true,
     "isolatedModules": true
   },
-  "include": ["server", "shared"],   // Add any other source folders if needed
+  "include": ["server", "server/shared"],   // Add any other source folders if needed
   "exclude": ["node_modules", "dist"]
 }

@@ -1,4 +1,4 @@
-import { InsertArticle, InsertSource } from "../../shared/schema";
+import { InsertArticle, InsertSource } from "../shared/schema";
 import { storage } from "../storage";
 
 interface RSSItem {
