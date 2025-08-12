@@ -341,14 +341,15 @@ export class DatabaseStorage implements IStorage {
         .orderBy(desc(trendingRecords.growthRate))
         .limit(20);
 
-      const trendingTopics = trendingResults.map(row => ({
-        topic: row.topic,
-        // count: row.mentions,
-        sentiment: 'neutral',
-        category: row.category || 'others',
-        lastMentioned: row.date?.toISOString() || new Date().toISOString(),
-        growth: row.growthRate || 0,
-      }));
+        const trendingTopics = trendingResults.map(row => ({
+          topic: row.topic,
+          count: row.count, // Use 'count' as per your model
+          sentiment: 'neutral',
+          category: row.category || 'others',
+          lastMentioned: row.date.toISOString(), // date is non-null
+          growth: row.growthRate || 0,
+        }));
+
 
       // Get view stats
       const [totalViews] = await db
