@@ -343,7 +343,7 @@ export class DatabaseStorage implements IStorage {
 
       const trendingTopics = trendingResults.map(row => ({
         topic: row.topic,
-        count: row.mentions,
+        // count: row.mentions,
         sentiment: 'neutral',
         category: row.category || 'others',
         lastMentioned: row.date?.toISOString() || new Date().toISOString(),
