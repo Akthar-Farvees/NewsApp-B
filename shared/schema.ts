@@ -12,7 +12,7 @@ import {
   pgEnum,
 } from "drizzle-orm/pg-core";
 import { createInsertSchema } from "drizzle-zod";
-import { z } from "zod";
+import { z, ZodType } from "zod";
 
 // Session storage table (required for Replit Auth)
 export const sessions = pgTable(
@@ -189,7 +189,7 @@ export const relatedArticlesRelations = relations(relatedArticles, ({ one }) => 
   }),
 }));
 
-// Insert schemas
+// Insert schemas with explicit typing to satisfy TS
 export const insertUserSchema = createInsertSchema(users).pick({
   email: true,
   firstName: true,
@@ -232,6 +232,8 @@ export const insertTrendingRecordSchema = createInsertSchema(trendingRecords).om
   id: true,
   createdAt: true,
 });
+
+
 
 // Types
 export type UpsertUser = z.infer<typeof upsertUserSchema>;
