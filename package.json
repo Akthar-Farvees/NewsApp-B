@@ -4,13 +4,12 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-  "test": "echo \"Error: no test specified\" && exit 1",
-  "dev": "nodemon --watch './**/*.ts' --ext ts,json --exec tsx index.ts",
-  "start": "node index.js",
-  "build": "tsc",
-  "vercel-build": "echo 'No build step required'"
-}
-,
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon --watch './**/*.ts' --ext ts,json --exec tsx index.ts",
+    "start": "node index.js",
+    "build": "tsc",
+    "vercel-build": "echo 'No build step required'"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -30,6 +29,7 @@
     "@types/cors": "^2.8.19",
     "@types/express": "^5.0.3",
     "@types/node": "^24.3.0",
+    "@types/ws": "^8.5.10",
     "drizzle-kit": "^0.31.4",
     "ts-node": "^10.9.2",
     "tsx": "^4.20.4",
