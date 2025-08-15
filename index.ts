@@ -67,14 +67,14 @@ async function initializeApp() {
 
     // For development - start server
     if (process.env.NODE_ENV !== "production" && !process.env.VERCEL) {
-      const port = parseInt(process.env.PORT || '5000', 10);
-      server.listen({
-        port,
-        host: "0.0.0.0",
-        reusePort: true,
-      }, () => {
-        console.log(`Development server running on port ${port}`);
-      });
+      const port = parseInt(process.env.PORT || '5101', 10);
+server.listen({
+  port,
+  host: "0.0.0.0",
+  reusePort: true,
+}, () => {
+  console.log(`Server running on port ${port} in ${process.env.NODE_ENV} mode`);
+});
     }
 
     return server;
