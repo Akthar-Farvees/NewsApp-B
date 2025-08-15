@@ -1,5 +1,5 @@
-import { InsertArticle, InsertSource } from "../shared/schema";
-import { storage } from "../storage";
+import { InsertArticle, InsertSource } from "../shared/schema.js";
+import { storage } from "../storage.js";
 
 interface RSSItem {
   title: string;

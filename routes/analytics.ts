@@ -1,5 +1,5 @@
 import type { Express } from 'express';
-import { storage } from '../storage';
+import { storage } from '../storage.js';
 import { sql } from 'drizzle-orm';
 
 export function registerAnalyticsRoutes(app: Express) {

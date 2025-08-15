@@ -1,7 +1,7 @@
-import { storage } from "../storage";
-import { aiService } from "./aiService";
-import { rssService } from "./rssService";
-import { InsertTrendingRecord } from "../shared/schema";
+import { storage } from "../storage.js";
+import { aiService } from "./aiService.js";
+import { rssService } from "./rssService.js";
+import { InsertTrendingRecord } from "../shared/schema.js";
 
 export class NewsService {
   async processNewArticles(): Promise<void> {

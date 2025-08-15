@@ -20,8 +20,8 @@ import {
   type InsertChatConversation,
   type TrendingRecord,
   type InsertTrendingRecord,
-} from "./shared/schema";
-import { db } from "./db";
+} from "./shared/schema.js";
+import { db } from "./db.js";
 import { eq, desc, and, or, sql, like, inArray, gte, lte, isNotNull } from "drizzle-orm";
 
 export interface IStorage {
