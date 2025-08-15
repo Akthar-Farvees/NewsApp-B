@@ -12,6 +12,6 @@
     "resolveJsonModule": true,
     "isolatedModules": true
   },
-  "include": ["server", "shared", "services", "types", "db.ts", "googleAuth.ts", "index.ts", "replitAuth.ts", "routes.ts", "storage.ts", "vite.ts", "routes"],
+  "include": ["server", "shared", "services", "types", "db.ts", "googleAuth.ts", "index.ts", "replitAuth.ts", "route.ts", "storage.ts", "vite.ts", "routes"],
   "exclude": ["node_modules", "dist"]
 }
