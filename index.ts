@@ -9,7 +9,7 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cors({
-  origin: process.env.Client_URL,
+  origin: process.env.Client_URL || "https://news-app-f-two.vercel.app",
   credentials: true,
 }));
 
