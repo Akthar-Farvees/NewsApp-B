@@ -1,17 +1,17 @@
 # Use Node.js 20 base image
 FROM node:20
 
-# Set environment
-ENV NODE_ENV=production
-
 # Set working directory
 WORKDIR /app
 
 # Copy package files
 COPY ["package.json", "package-lock.json*", "./"]
 
-# Install only production dependencies
-RUN npm install --production
+# Install all dependencies (including dev dependencies)
+RUN npm install
+
+# Install nodemon globally for development
+RUN npm install -g nodemon
 
 # Copy all source code
 COPY . .
@@ -19,5 +19,8 @@ COPY . .
 # Expose the port your app runs on
 EXPOSE 5101
 
-# Run your app (ensure it listens on 0.0.0.0)
-CMD ["node", "index.js"]
+# Use development script if NODE_ENV=development, else run production
+CMD if [ "$NODE_ENV" = "development" ]; \
+    then npm run dev; \
+    else node index.js; \
+    fi
